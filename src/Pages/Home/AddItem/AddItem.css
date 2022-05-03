@@ -1,0 +1,10 @@
+input{
+    border:1px solid #9CC25D;
+    border-radius: 5px;
+}
+.submit-btn{
+    background-color: #9CC25D;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}

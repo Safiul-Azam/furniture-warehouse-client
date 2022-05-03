@@ -6,6 +6,7 @@ import Inventory from './Pages/Home/Inventory/Inventory/Inventory';
 import Header from './Pages/Shared/Header/Header';
 import ManageInventory from './Pages/Home/Inventory/ManageInventory/ManageInventory';
 import AllInventory from './Pages/Home/Inventory/AllInventory/AllInventory';
+import AddItem from './Pages/Home/AddItem/AddItem';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/allInventory' element={<AllInventory></AllInventory>}></Route>
       <Route path='/inventory/:inventoryId' element={<Inventory></Inventory>}></Route>
       <Route path='/manage-inventory' element={<ManageInventory></ManageInventory>}></Route>
+      <Route path='/addItem' element={<AddItem></AddItem>}></Route>
     </Routes>
     </div>
   );
