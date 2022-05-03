@@ -1,6 +1,5 @@
 import React from 'react';
-import banner1 from '../../../images/banner/banner1.png'
-import InventoryItem from '../InventoryItem/InventoryItem';
+import InventoryItem from '../Inventory/InventoryItem/InventoryItem';
 import './Home.css'
 
 const Home = () => {

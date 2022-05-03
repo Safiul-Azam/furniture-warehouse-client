@@ -8,6 +8,7 @@
     font-size: 16px;
     font-weight: 500;
     transition: .4s;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .navbar-menu a:hover{
     color: #9CC25D;
@@ -15,6 +16,7 @@
 .logo{
     text-align: center;
     font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .logo .title-color{
     color:#9CC25D;
