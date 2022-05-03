@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "ENGINE DIAGNOSTIC",
+        "price": "300",
+        "supplier":"James William",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/q100X8P/furniture1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "WHEEL ALIGNMENT",
+        "price": "100",
+        "supplier":"Sebastian",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/tP89bd5/furniture2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "OIL CHANGING",
+        "price": "150",
+        "supplier":"Christopher",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/KzwSrSj/furniture3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "BRAKE REPARING",
+        "price": "180",
+        "supplier":"Gabriel",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/q100X8P/furniture2.jpg"
+    },
+    {
+        "id": 5,
+        "name": "WASH AND GLASSING",
+        "price": "100",
+        "supplier":"Jeremiah",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/KzwSrSj/furniture3.jpg"
+    },
+    {
+        "id": 6,
+        "name": "COMPLETE ANALYSIS",
+        "price": "300",
+        "supplier":"Bennett",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/tP89bd5/furniture1.jpg"
+    }
+]
