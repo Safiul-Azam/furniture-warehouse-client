@@ -9,7 +9,8 @@ const Header = () => {
             <div className='text-center navbar-menu'>
                 <Link to='/home'>Home</Link>
                 <Link to='/blog'>Blogs</Link>
-                <Link to='inventory-items'>Inventory-item</Link>
+                <Link to='allInventory'>All-Inventory</Link>
+                <Link to='manage-inventory'>Manage-Inventory</Link>
             </div>
         </div>
     );

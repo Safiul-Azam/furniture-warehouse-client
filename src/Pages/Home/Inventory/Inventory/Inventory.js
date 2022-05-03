@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form } from 'react-bootstrap';
-import { Button } from 'bootstrap';
 import { useParams } from 'react-router-dom';
 import useInventoryDetails from '../../../../hooks/useInventoryDetails';
 import './Inventory.css'
