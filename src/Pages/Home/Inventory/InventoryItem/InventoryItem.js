@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './InventoryItem.css'
 import InventorySingle from '../InventorySingle/InventorySingle';
 import useInventory from '../../../../hooks/useInventory';

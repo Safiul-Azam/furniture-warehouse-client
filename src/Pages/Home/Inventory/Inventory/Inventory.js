@@ -1,26 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form } from 'react-bootstrap';
+import { Button } from 'bootstrap';
 import { useParams } from 'react-router-dom';
 import useInventoryDetails from '../../../../hooks/useInventoryDetails';
-const Inventory = () => {
-    const {inventoryId} = useParams()
+import './Inventory.css'
+const Inventory = ({ handleQuantity }) => {
+    const { inventoryId } = useParams()
     const [product] = useInventoryDetails(inventoryId)
-    
-    const handleCount = ()=>{
-        console.log('count')
-    }
     return (
-        <div className='container d-flex justify-content-center'>
-            <div>
+        <div className='container product-details my-5'>
+            <div className='col-4'>
                 <img src={product.img} alt="" />
             </div>
-            <div>
-            <div className='single-item text-center'>
-            <h5>{product.name}</h5>
-            <h5>${product.price}</h5>
-            <h5>Supplier: {product.supplier}</h5>
-            <p>{product.description}</p>
-            <button onClick={handleCount} className='btn btn-primary'>Delivered</button>
-        </div>
+            <div className='single-item col-5'>
+                <h5>{product.name}</h5>
+                <h5 className='price'>${product.price}</h5>
+                <h5>Supplier: {product.supplier}</h5>
+                <p className='description'>{product.description}</p>
+                <button onClick={handleQuantity} className='btn btn-primary'>Delivered</button>
+                <Form.Group className="my-3" controlId="formBasicPassword">
+                    <Form.Control type="number" placeholder="add" />
+                </Form.Group>
+                <button type="button" class="btn btn-outline-success">Add</button>
             </div>
         </div>
     );

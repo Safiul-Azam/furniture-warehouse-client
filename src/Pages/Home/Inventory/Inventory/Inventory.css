@@ -1,0 +1,14 @@
+.product-details{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #F8F8F8;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 40px;
+}
+.price{
+    color: #9CC25D;
+}
+.description{
+    font-size: 14px;
+    color: #868686;
+}
