@@ -4,7 +4,21 @@ import './AddItem.css'
 
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data =>{
+        console.log(data);
+        const url = `http://localhost:5000/furniture`
+        fetch(url,{
+            method:'POST',
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(furniture =>{
+            console.log(furniture)
+        })
+    } 
 
     return (
         <div className='w-50 mx-auto my-5'>
