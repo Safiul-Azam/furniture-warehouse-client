@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useInventoryDetails from '../../../../hooks/useInventoryDetails';
 import './Inventory.css'
@@ -16,11 +16,11 @@ const Inventory = ({ handleQuantity }) => {
                 <h5 className='price'>${product.price}</h5>
                 <h5>Supplier: {product.supplier}</h5>
                 <p className='description'>{product.description}</p>
-                <button onClick={handleQuantity} className='btn btn-primary'>Delivered</button>
+                <Button className='rounded-0' variant="dark">Delivered</Button>
                 <Form.Group className="my-3" controlId="formBasicPassword">
-                    <Form.Control type="number" placeholder="add" />
+                    <Form.Control type="number" placeholder="Add Quantity" />
                 </Form.Group>
-                <button type="button" className="btn btn-outline-success">Add</button>
+                <Button className='rounded-0' variant="outline-dark">add</Button>
             </div>
         </div>
     );

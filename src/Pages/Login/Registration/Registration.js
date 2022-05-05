@@ -42,21 +42,19 @@ const Registration = () => {
             <Form onSubmit={handleSubmit}>
                 <h2 className='text-center my-3'>Please <span className='title-color'>Login</span></h2>
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label className='title-color'>Your Name</Form.Label>
+                    <Form.Label>Your Name</Form.Label>
                     <Form.Control type="text" placeholder="Enter Your Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='title-color'>Email address</Form.Label>
+                    <Form.Label>Email address</Form.Label>
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className='title-color'>Password</Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                <p>have you an account? <Link to='/login'>Please Login</Link></p>
+                <Button className='rounded-0 mb-3' type="submit" variant="dark">Registration</Button>
+                <p>Already have an account? <Link className='title-color text-decoration-none' to='/login'>Please Login</Link></p>
             </Form>
         </div>
     );

@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInventory from '../../../../hooks/useInventory';
@@ -16,8 +18,8 @@ const ManageTable = ({ product }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if(data.deletedCount > 0){
-                        const remaining = products.filter(product => product._id !==id)
+                    if (data.deletedCount > 0) {
+                        const remaining = products.filter(product => product._id !== id)
                         setProducts(remaining)
                     }
                 })
@@ -40,8 +42,10 @@ const ManageTable = ({ product }) => {
                 <p>{description}</p>
             </div>
             <div className='col-2'>
-                <button onClick={() => handleRemoveItem(_id)}>X</button>
-                <button onClick={() => { handleUpdateItem(_id) }}>Update</button>
+                <div className='d-flex align-items-center'>
+                    <button className='icon-btn' onClick={() => { handleUpdateItem(_id) }}><FontAwesomeIcon className='update-icon' icon={faPenToSquare}></FontAwesomeIcon></button>
+                    <button className='icon-btn' onClick={() => handleRemoveItem(_id)}><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>
+                </div>
             </div>
         </div>
     );

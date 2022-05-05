@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import './InventorySingle.css'
 
@@ -17,9 +18,8 @@ const InventorySingle = ({ furniture }) => {
                 <h5>${price}</h5>
                 <h5>Supplier: {supplier}</h5>
                 <p>{description}</p>
-                <button onClick={() => navigateToInventory(_id)} className='btn btn-primary'>Update</button>
+                <Button className='rounded-0' onClick={() => navigateToInventory(_id)} variant="outline-dark">Update</Button>
             </div>
-            <Link to='/manage-inventory'>manage inventory</Link>
         </div>
     );
 };

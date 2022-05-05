@@ -56,10 +56,8 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                    <p>New to Furniture ware house? <Link className='title-color text-decoration-none' to='/registration'>Create New Account</Link></p>
+                    <Button className='rounded-0 mb-3' type="submit" variant="dark">Login</Button>
+                    <p>New to Furniture-ware-house? <Link className='title-color text-decoration-none' to='/registration'>Create New Account</Link></p>
                     <p>Forget Password?<button className='title-color btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
                 </Form>
             </div>

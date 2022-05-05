@@ -17,3 +17,15 @@
     font-size: 25px;
     color: #9CC25D;
 }
+.delete-icon{
+    font-size: 30px;
+    color:#E20D25;
+}
+.icon-btn{
+   background-color: #FFFFFF;
+   border:none;
+}
+.update-icon{
+ color: #E35923;
+ font-size: 30px;
+}
