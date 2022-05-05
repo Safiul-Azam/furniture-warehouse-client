@@ -10,30 +10,50 @@ import UpdateInventory from './Pages/Home/Inventory/UpdateInventory/UpdateInvent
 import Login from './Pages/Login/Login/Login';
 import Registration from './Pages/Login/Registration/Registration';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import Footer from './Pages/Shared/Footer/Footer';
+import MyItem from './Pages/Home/MyItem/MyItem';
+import { ToastContainer } from 'react-toastify';
+import NoFoundPage from './Pages/NoFoundPage/NoFoundPage';
 
 function App() {
   return (
     <div className="">
       <Header></Header>
-    <Routes>
-      <Route path='/' element={<Home></Home>}></Route>
-      <Route path='/home' element={<Home></Home>}></Route>
-      <Route path='/allInventory' element={<AllInventory></AllInventory>}></Route>
-      <Route path='/inventory/:inventoryId' element={<Inventory></Inventory>}></Route>
-      <Route path='/manage-inventory' element={
-      <RequireAuth>
-        <ManageInventory></ManageInventory>
-      </RequireAuth>
-    }></Route>
-      <Route path='/addItem' element={
-        <RequireAuth>
-        <AddItem></AddItem>
-      </RequireAuth>
-    }></Route>
-      <Route path='/updateInventory/:updateId' element={<UpdateInventory></UpdateInventory>}></Route>
-      <Route path='/login' element={<Login></Login>}></Route>
-      <Route path='/registration' element={<Registration></Registration>}></Route>
-    </Routes>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/allInventory' element={<AllInventory></AllInventory>}></Route>
+        <Route path='/inventory/:inventoryId' element={
+          <RequireAuth>
+            <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manage-inventory' element={
+          <RequireAuth>
+            <ManageInventory></ManageInventory>
+          </RequireAuth>
+        }></Route>
+        <Route path='/addItem' element={
+          <RequireAuth>
+            <AddItem></AddItem>
+          </RequireAuth>
+        }></Route>
+        <Route path='/updateInventory/:updateId' element={
+          <RequireAuth>
+            <UpdateInventory></UpdateInventory>
+          </RequireAuth>
+        }></Route>
+        <Route path='/myItem' element={
+          <RequireAuth>
+            <MyItem></MyItem>
+          </RequireAuth>
+        }></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/registration' element={<Registration></Registration>}></Route>
+        <Route path='*'element={<NoFoundPage></NoFoundPage>}></Route>
+      </Routes>
+      <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

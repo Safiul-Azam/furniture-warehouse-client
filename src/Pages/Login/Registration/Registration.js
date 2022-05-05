@@ -1,37 +1,42 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Loading/Loading';
 
-const Registration = () => {   
+const Registration = () => {
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const nameRef = useRef('')
     const navigate = useNavigate()
-    const location =useLocation()
+    const location = useLocation()
     const from = location.state?.from?.pathname || "/";
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      if(loading){
-          return <Loading></Loading>
-      }
-      if(user){
-          navigate(from ,{replace:true})
-      }
-    const handleSubmit = e =>{
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
+    if (loading) {
+        return <Loading></Loading>
+    }
+    if (user) {
+        console.log(user)
+    }
+    const handleSubmit = async e => {
         e.preventDefault()
         const name = nameRef.current.value
         const email = emailRef.current.value
         const password = passwordRef.current.value
-        createUserWithEmailAndPassword(email, password)
-        console.log(email,password)
-    } 
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName:name});
+        toast('Registration complete');
+        navigate(from, { replace: true })
+        
+    }
     return (
         <div className='w-50 mx-auto border p-4 my-5'>
             <Form onSubmit={handleSubmit}>

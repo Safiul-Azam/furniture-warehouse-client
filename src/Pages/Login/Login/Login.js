@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -18,6 +19,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+        auth
+      );
     if (user) {
         navigate(from , {replace:true})
     }
@@ -29,7 +33,15 @@ const Login = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
-        console.log(email, password)
+    }
+    const resetPassword =async ()=>{
+        const email = emailRef.current.value
+        if(email){
+        await sendPasswordResetEmail(email);
+        toast('Sent email');
+        }else{
+            toast('please enter your email')
+        }
     }
     return (
         <div className='w-50 mx-auto my-5'>
@@ -37,17 +49,18 @@ const Login = () => {
                 <Form onSubmit={handleSubmit}>
                     <h2 className='text-center my-3'>Please <span className='title-color'>Login</span></h2>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label className='title-color'>Email address</Form.Label>
+                        <Form.Label>Email address</Form.Label>
                         <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label className='title-color'>Password</Form.Label>
+                        <Form.Label>Password</Form.Label>
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                    <p>New to Furniture ware house? <Link to='/registration'>Create New Account</Link></p>
+                    <p>New to Furniture ware house? <Link className='title-color text-decoration-none' to='/registration'>Create New Account</Link></p>
+                    <p>Forget Password?<button className='title-color btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
                 </Form>
             </div>
             <SocialLogin></SocialLogin>
