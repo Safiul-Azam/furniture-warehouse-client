@@ -1,0 +1,19 @@
+.manage-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: #F8F8F8;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+}
+.item-img img{
+    width: 60%;
+}
+.supplier{
+   font-size: 16px;
+}
+.price{
+    font-size: 25px;
+    color: #9CC25D;
+}

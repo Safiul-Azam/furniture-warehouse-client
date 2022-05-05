@@ -10,7 +10,7 @@ const InventoryItem = () => {
         <div className='my-5'>
             <div>
                 <div></div>
-                <h3 className='text-center '>Inventory <span className='title-color'>Item</span></h3>
+                <h3 className='text-center my-4'>Inventory <span className='title-color'>Item</span></h3>
                 <div></div>
             </div>
             <div className='container furniture-collection'>

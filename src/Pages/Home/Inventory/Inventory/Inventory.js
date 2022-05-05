@@ -20,7 +20,7 @@ const Inventory = ({ handleQuantity }) => {
                 <Form.Group className="my-3" controlId="formBasicPassword">
                     <Form.Control type="number" placeholder="add" />
                 </Form.Group>
-                <button type="button" class="btn btn-outline-success">Add</button>
+                <button type="button" className="btn btn-outline-success">Add</button>
             </div>
         </div>
     );
