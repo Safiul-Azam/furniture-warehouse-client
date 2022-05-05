@@ -1,8 +1,27 @@
 .banner{
-    background-image: url(../../../images//banner//banner1.png);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.679),rgba(0, 0, 0, 0.647)), url(../../../images//banner//banner1.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 270px 0;
     margin: 50px 0;
+}
+.banner-title{
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 50px;
+}
+.update-btn{
+    border:1px solid #9CC25D;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    color:#9CC25D;
+    transition: .5s;
+}
+.update-btn:hover{
+    background-color: #9CC25D;
+    color: white;
+
 }

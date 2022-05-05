@@ -17,7 +17,7 @@ const InventoryItem = () => {
             </div>
             <div className='container furniture-collection'>
                 {
-                    products.slice(0, 5).map(furniture => <InventorySingle
+                    products.slice(0, 6).map(furniture => <InventorySingle
                         key={furniture._id}
                         furniture={furniture}
                     ></InventorySingle>)

@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "Sofa Salamander-244",
+        "price": "300",
+        "supplier":"James William",
+        "description": "The Salamander is a sofa, bed, and discreet storage space in one. Whether you’re lounging with family during the weekends or accommodating guests overnight, the Salamander provides you with great convenience by virtue of its versatility.",
+        "img": "https://i.ibb.co/HNY0pnH/slider-4.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sofa Morris-287",
+        "price": "100",
+        "supplier":"Sebastian",
+        "description": "Made from Kiln-dried imported Beech veneered engineered wood High quality environment friendly Italian Ultra Violet (UV) and Polyurethane(PU)  Imported fabric upholstery with soft and durable cushioning. Fabric can be selected from available options",
+        "img": " https://i.ibb.co/6yMKQGH/slider-3-3.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Sofa Angelina-179",
+        "price": "150",
+        "supplier":"Christopher",
+        "description": "Made from Kiln-dried imported Beech wood and veneered engineered wood and veneered MDF High quality environment friendly Italian Ultra Violet (UV) and Polyurethane (PU) Lacquer in antique finish Please refer to images for dimension details Imported fabric upholstery with soft and durable cushioning.",
+        "img": " https://i.ibb.co/2PVdxD1/slider2.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Sofa Wallace-283",
+        "price": "180",
+        "supplier":"Gabriel",
+        "description": "Made from Kiln-dried imported Beech veneered engineered wood. High quality environment friendly Italian Ultra Violet (UV) and Polyurethane (PU) Lacquer in antique finish Please refer to images for dimension details",
+        "img": "https://i.ibb.co/Xt4gD3q/slider1.jpg"
+    }
+   
+]
