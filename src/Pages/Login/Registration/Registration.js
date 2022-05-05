@@ -1,22 +1,28 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Loading/Loading';
 
 const Registration = () => {   
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const nameRef = useRef('')
     const navigate = useNavigate()
+    const location =useLocation()
+    const from = location.state?.from?.pathname || "/";
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
+      if(loading){
+          return <Loading></Loading>
+      }
       if(user){
-          navigate('/home')
+          navigate(from ,{replace:true})
       }
     const handleSubmit = e =>{
         e.preventDefault()

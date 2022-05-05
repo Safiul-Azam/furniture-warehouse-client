@@ -4,11 +4,22 @@ import github from '../../../images/social-icon/github.png';
 import './SocialLogin.css'
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 const SocialLogin = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+    if(googleUser || gitUser){
+        navigate(from, {replace:true})
+    }
 
+    if(googleLoading || gitLoading){
+        return <Loading></Loading>
+    }
    
     return (
         <div>
