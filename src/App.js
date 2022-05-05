@@ -8,6 +8,7 @@ import AllInventory from './Pages/Home/Inventory/AllInventory/AllInventory';
 import AddItem from './Pages/Home/AddItem/AddItem';
 import UpdateInventory from './Pages/Home/Inventory/UpdateInventory/UpdateInventory';
 import Login from './Pages/Login/Login/Login';
+import Registration from './Pages/Login/Registration/Registration';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path='/addItem' element={<AddItem></AddItem>}></Route>
       <Route path='/updateInventory/:updateId' element={<UpdateInventory></UpdateInventory>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
+      <Route path='/registration' element={<Registration></Registration>}></Route>
     </Routes>
     </div>
   );
