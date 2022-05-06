@@ -1,11 +1,38 @@
-import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import React, { useState }  from 'react';
+import { Button} from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import useInventoryDetails from '../../../../hooks/useInventoryDetails';
 import './Inventory.css'
-const Inventory = ({ handleQuantity }) => {
+const Inventory = () => {
+    const [quantity, setQuantity] = useState(0)
+    
     const { inventoryId } = useParams()
     const [product] = useInventoryDetails(inventoryId)
+    const quantityNum = Number(product.quantity)
+    // console.log(typeof quantityNum)
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        console.log(typeof data);
+        const url = `http://localhost:5000/furniture/${inventoryId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(quantity => {
+                if (quantity.modifiedCount > 0) {
+                    toast('Update Your product')
+                    console.log(quantity)
+                } else {
+                    toast('please update product info!')
+                }
+            })
+    }
     return (
         <div className='container product-details my-5'>
             <div className='col-4'>
@@ -13,17 +40,21 @@ const Inventory = ({ handleQuantity }) => {
             </div>
             <div className='single-item col-5'>
                 <h5>{product.name}</h5>
-                <h5 className='price'>${product.price}</h5>
-                <h5>Supplier: {product.supplier}</h5>
-                <p className='description'>{product.description}</p>
-                <Button className='rounded-0' variant="dark">Delivered</Button>
-                <Form.Group className="my-3" controlId="formBasicPassword">
-                    <Form.Control type="number" placeholder="Add Quantity" />
-                </Form.Group>
-                <Button className='rounded-0' variant="outline-dark">add</Button>
+                <h5 className='price'>${product?.price}</h5>
+                <h5 className='price'>Quantity: {quantityNum}</h5>
+                <h5>Supplier: {product?.supplier}</h5>
+                <p className='description'>{product?.description}</p>
+                <Button className='rounded-0 my-3' variant="dark">Delivered</Button>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input className='me-2' placeholder='Product Quantity' type="number" {...register("quantity")} />
+                    <input type="submit" value='Add' />
+                </form>
+                {/* <Form.Group className="my-3" controlId="formBasicPassword">
+                        <Form.Control ref={numberRef} type="number" placeholder="Add Quantity" />
+                    </Form.Group>
+                <Button onClick={handleAddQuantity} className='rounded-0' variant="outline-dark">add</Button> */}
             </div>
         </div>
     );
 };
-
 export default Inventory;
