@@ -32,7 +32,7 @@ const Header = () => {
                                     user && <>
                                         <Link to='/addItem'>Add Item</Link>
                                         <Link to='/manage-inventory'>Manage-Inventory</Link>
-                                        <Link to='/myItem'>My-item</Link>
+                                        <Link to='/myAddedProducts'>My-item</Link>
                                     </>
                                 }
                                 {user ?

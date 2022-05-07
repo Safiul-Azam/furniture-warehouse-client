@@ -6,7 +6,7 @@ import auth from '../../../firebase.init';
 import './AddItem.css'
 
 const AddItem = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
     const onSubmit = data =>{
         console.log(data);
@@ -23,6 +23,7 @@ const AddItem = () => {
             console.log(furniture)
         })
         toast('added new item')
+        reset()
     } 
 
     return (

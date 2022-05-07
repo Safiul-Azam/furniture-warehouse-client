@@ -11,7 +11,7 @@ import Login from './Pages/Login/Login/Login';
 import Registration from './Pages/Login/Registration/Registration';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Footer from './Pages/Shared/Footer/Footer';
-import MyItem from './Pages/Home/MyItem/MyItem';
+import MyAddedProducts from './Pages/MyAddedProduct/MyAddedProducts/MyAddedProducts';
 import { ToastContainer } from 'react-toastify';
 import NoFoundPage from './Pages/NoFoundPage/NoFoundPage';
 
@@ -43,9 +43,9 @@ function App() {
             <UpdateInventory></UpdateInventory>
           </RequireAuth>
         }></Route>
-        <Route path='/myItem' element={
+        <Route path='/myAddedProducts' element={
           <RequireAuth>
-            <MyItem></MyItem>
+           <MyAddedProducts></MyAddedProducts>
           </RequireAuth>
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>

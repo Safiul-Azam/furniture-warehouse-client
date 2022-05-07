@@ -33,6 +33,7 @@ const Login = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
+        e.target.reset()
     }
     const resetPassword =async ()=>{
         const email = emailRef.current.value
