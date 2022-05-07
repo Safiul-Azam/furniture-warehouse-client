@@ -31,6 +31,6 @@
 }
 @media only screen and (max-width:576px) {
     .manage-item{
-        
+        flex-direction: column;
     }
 }

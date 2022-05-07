@@ -16,7 +16,7 @@ const OurBlogs = () => {
                 <div className='d-flex align-items-center w-25 mx-auto'>
                 <div style={{ height: '2px' }} className='line-color w-25'></div>
                 <div>
-                    <h3 className='text-center my-4 mx-3'>Our <span className='title-color'>Blogs</span></h3>
+                    <h3 className='text-center my-4'>Our <span className='title-color'>Blogs</span></h3>
                 </div>
                 <div style={{ height: '2px' }} className='line-color w-25'></div>
             </div>
