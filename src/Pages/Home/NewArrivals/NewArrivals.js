@@ -9,7 +9,14 @@ const NewArrivals = () => {
         .then(data => setArrivals(data))
     },[])
     return (
-        <div>
+        <div className='arrivals-section'>
+            <div className='d-flex align-items-center w-25 mx-auto'>
+                <div style={{ height: '2px' }} className='line-color w-25'></div>
+                <div>
+                    <h3 className='text-center mt-3 mx-3'>New <span className='title-color'>Arrivals</span></h3>
+                </div>
+                <div style={{ height: '2px' }} className='line-color w-25'></div>
+            </div>
            {
                arrivals.map(arrival => <div
                  key={arrival.id}
@@ -19,7 +26,7 @@ const NewArrivals = () => {
                       <div className='arrival-info col-5'>
                           <h5>New Arrivals</h5>
                           <h2>{arrival.name}</h2>
-                          <h2 className='limited'>Limited Product</h2>
+                          <h2 className='limited'>Stock Limited</h2>
                           <h4> ${arrival.price}</h4>
                           <p>{arrival.description}</p>
                           <button variant="outline-dark" className='update-arrival-btn'>Update</button>

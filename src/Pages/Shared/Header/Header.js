@@ -26,7 +26,7 @@ const Header = () => {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className='w-70 d-block mx-auto navbar-menu' >
                                 <Link to='/home'>Home</Link>
-                                <Link to='/blog'>Blogs</Link>
+                                <Link to='/Our-blogs'>Our Blogs</Link>
                                 <Link to='/allInventory'>All-Inventory</Link>
                                 {
                                     user && <>
