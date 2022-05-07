@@ -1,6 +1,7 @@
 import React from 'react';
 import InventoryItem from '../Inventory/InventoryItem/InventoryItem';
-import Sliders from '../Sliders/Sliders';
+import NewArrivals from '../NewArrivals/NewArrivals';
+import OurBlogs from '../OurBlogs/OurBlogs/OurBlogs';
 import './Home.css'
 
 const Home = () => {
@@ -13,6 +14,8 @@ const Home = () => {
                 </div>
             </div>
             <InventoryItem></InventoryItem>
+            <NewArrivals></NewArrivals>
+            <OurBlogs></OurBlogs>
         </div>
     );
 };

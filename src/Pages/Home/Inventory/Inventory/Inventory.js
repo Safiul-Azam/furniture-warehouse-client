@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useState }  from 'react';
 import { Button} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
@@ -6,15 +6,32 @@ import { toast } from 'react-toastify';
 import useInventoryDetails from '../../../../hooks/useInventoryDetails';
 import './Inventory.css'
 const Inventory = () => {
-    const [quantity, setQuantity] = useState(0)
-    
+    const [reload, setIsReload] =useState(true) 
     const { inventoryId } = useParams()
     const [product] = useInventoryDetails(inventoryId)
-    const quantityNum = Number(product.quantity)
-    // console.log(typeof quantityNum)
+    useEffect(()=>{
+        const url =`http://localhost:5000/furniture/${inventoryId}`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setIsReload(!reload))
+    },[])
+    const handleDeleteQuantity = () => {
+        const newQuantity = product.quantity - 1
+        const url = `http://localhost:5000/furniture/${inventoryId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newQuantity)
+        })
+            .then(res => res.json())
+            .then(data=>{
+                console.log(data)
+            })
+    }
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(typeof data);
         const url = `http://localhost:5000/furniture/${inventoryId}`
         fetch(url, {
             method: 'PUT',
@@ -33,6 +50,7 @@ const Inventory = () => {
                 }
             })
     }
+
     return (
         <div className='container product-details my-5'>
             <div className='col-4'>
@@ -41,10 +59,10 @@ const Inventory = () => {
             <div className='single-item col-5'>
                 <h5>{product.name}</h5>
                 <h5 className='price'>${product?.price}</h5>
-                <h5 className='price'>Quantity: {quantityNum}</h5>
+                <h5 className='price'>Quantity: {product.quantity}</h5>
                 <h5>Supplier: {product?.supplier}</h5>
                 <p className='description'>{product?.description}</p>
-                <Button className='rounded-0 my-3' variant="dark">Delivered</Button>
+                <Button onClick={handleDeleteQuantity} className='rounded-0 my-3' variant="dark">Delivered</Button>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className='me-2' placeholder='Product Quantity' type="number" {...register("quantity")} />
                     <input type="submit" value='Add' />

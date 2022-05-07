@@ -1,0 +1,27 @@
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.update-arrival-btn{
+    border:1px solid #000;
+    padding: 7px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    color:#000;
+    transition: .5s;
+}
+.update-arrival-btn:hover{
+    background-color: #000;
+    color: white;
+}
+.arrival-info h2 h4, h5{
+    color: #000;
+}
+.limited{
+    color: #9CC25D;
+    font-size: 40px;
+}
+.arrival-info p{
+    font-size: 14px;
+    color: #868686;
+}
