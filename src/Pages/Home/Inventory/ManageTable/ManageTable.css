@@ -29,3 +29,8 @@
  color: #E35923;
  font-size: 30px;
 }
+@media only screen and (max-width:576px) {
+    .manage-item{
+        
+    }
+}

@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <div className='banner'>
-                <div className='w-50 container'>
+                <div className='w-100 container'>
                     <h3 className='text-center banner-title'>JACOB Dining Hansford-193 and Jellyroll-193 (6 Chair and 1 Table)DINING TABLE</h3>
                     <button className='update-btn d-block mx-auto'>Update</button>
                 </div>

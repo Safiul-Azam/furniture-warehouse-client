@@ -20,7 +20,7 @@ const OurBlogs = () => {
                 </div>
                 <div style={{ height: '2px' }} className='line-color w-25'></div>
             </div>
-                    <p className='mb-5'>House-ware-house is considered to be the game-changer in the world furniture industry. Carefully-chosen raw material, environment-friendly business practices, and customer-centric approaches are what made House-ware-house a beloved brand at home and abroad.</p>
+                    <p className='mb-5'>House-ware-house is considered to be the game-changer in the world furniture industry</p>
                 </div>
                 <div className='blogs-item'>
                     {

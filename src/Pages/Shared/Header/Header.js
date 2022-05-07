@@ -12,39 +12,36 @@ const Header = () => {
         signOut(auth)
     }
     return (
-        <div className='container mt-2'>
-            <h2 className='logo'>FURNITURE <span className='title-color'>WARE HOUSE</span></h2>
-            <div >
-
-
-
-            </div>
-            <div>
-                <Navbar collapseOnSelect expand="lg">
-                    <Container>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className='w-70 d-block mx-auto navbar-menu' >
-                                <Link to='/home'>Home</Link>
-                                <Link to='/Our-blogs'>Our Blogs</Link>
-                                <Link to='/allInventory'>All-Inventory</Link>
-                                {
-                                    user && <>
-                                        <Link to='/addItem'>Add Item</Link>
-                                        <Link to='/manage-inventory'>Manage-Inventory</Link>
-                                        <Link to='/myAddedProducts'>My-item</Link>
-                                    </>
-                                }
-                                {user ?
-                                    <Link onClick={() => handleSignOut()} to=''>SignOut</Link> :
-                                    <Link to='login'>Login</Link>
-                                }
-                            </Nav>
-                            <Nav>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
+        <div className='nav-bar mt-2 sticky-top'>
+            <div className='container'>
+                <h2 className='logo'>FURNITURE <span className='title-color'>WARE HOUSE</span></h2>
+                <div>
+                    <Navbar collapseOnSelect expand="lg" className=''>
+                        <Container>
+                            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                            <Navbar.Collapse id="responsive-navbar-nav">
+                                <Nav className='w-70 d-block mx-auto navbar-menu' >
+                                    <Link to='/home'>Home</Link>
+                                    <Link to='/Our-blogs'>Our Blogs</Link>
+                                    <Link to='/allInventory'>All-Inventory</Link>
+                                    {
+                                        user && <>
+                                            <Link to='/addItem'>Add Item</Link>
+                                            <Link to='/manage-inventory'>Manage-Inventory</Link>
+                                            <Link to='/myAddedProducts'>My-item</Link>
+                                        </>
+                                    }
+                                    {user ?
+                                        <Link onClick={() => handleSignOut()} to=''>SignOut</Link> :
+                                        <Link to='login'>Login</Link>
+                                    }
+                                </Nav>
+                                <Nav>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Container>
+                    </Navbar>
+                </div>
             </div>
         </div>
     );

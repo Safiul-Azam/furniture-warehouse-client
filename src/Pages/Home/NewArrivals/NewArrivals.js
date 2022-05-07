@@ -19,11 +19,11 @@ const NewArrivals = () => {
             </div>
            {
                arrivals.map(arrival => <div
+               className='container'
                  key={arrival.id}
                  >
-                    <div className='container d-flex justify-content-between align-items-center'>
-                       
-                      <div className='arrival-info col-5'>
+                    <div className=' d-flex align-items-center row'>
+                      <div className='arrival-info col-lg-6 col-12'>
                           <h5>New Arrivals</h5>
                           <h2>{arrival.name}</h2>
                           <h2 className='limited'>Stock Limited</h2>
@@ -31,8 +31,8 @@ const NewArrivals = () => {
                           <p>{arrival.description}</p>
                           <button variant="outline-dark" className='update-arrival-btn'>Update</button>
                       </div>
-                      <div className='col-6'> 
-                          <img src={arrival.img} alt="" />
+                      <div className='col-lg-6 col-12'> 
+                          <img className='w-100' src={arrival.img} alt="" />
                       </div>  
                     </div> 
                  </div> )

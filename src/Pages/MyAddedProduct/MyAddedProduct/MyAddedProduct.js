@@ -20,7 +20,6 @@ const MyAddedProduct = ({furniture, handleRemoveItem}) => {
             </div>
             <div className='col-2'>
                 <div className='d-flex align-items-center'>
-                    {/* <button className='icon-btn' onClick={() => { handleUpdateItem(_id) }}><FontAwesomeIcon className='update-icon' icon={faPenToSquare}></FontAwesomeIcon></button> */}
                     <button className='icon-btn' onClick={() => handleRemoveItem(_id)}><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>
                 </div>
             </div>
