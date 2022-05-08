@@ -3,6 +3,8 @@ import { Button, FormControl, InputGroup } from 'react-bootstrap';
 import './Footer.css'
 
 const Footer = () => {
+    const today = new Date()
+    const year = today.getFullYear()
     return (
         <div className='footer'>
             <div className='container'>
@@ -23,7 +25,7 @@ const Footer = () => {
                     </InputGroup>
                 </div>
                 <div className='mt-5'>
-                    <p className='text-center'>&copy; Copyright <span className='title-color'>Furniture-ware-house</span>. All Rights Reserved</p>
+                    <p className='text-center'>&copy; Copyright {year} <span className='title-color'>Furniture-ware-house</span>. All Rights Reserved</p>
                 </div>
             </div>
         </div>
