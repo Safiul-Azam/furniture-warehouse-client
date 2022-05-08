@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useInventory from '../../../../hooks/useInventory';
 import ManageTable from '../ManageTable/ManageTable';
@@ -39,6 +40,9 @@ const ManageInventory = () => {
                     ></ManageTable>)
                 }
             </div>
+            <div className='text-center my-4 '>
+                    <Button onClick={() => navigate('/addItem')} className='rounded-0 my-3 px-5' variant="dark">All Inventory</Button>
+                </div>
         </div>
     );
 };
