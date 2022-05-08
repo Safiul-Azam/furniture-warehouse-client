@@ -5,7 +5,7 @@ import './OurBlogs.css'
 const OurBlogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(()=>{
-        fetch('blogs.json')
+        fetch('https://fast-brook-43843.herokuapp.com/slider')
         .then(res => res.json())
         .then(data => setBlogs(data))
     },[])
@@ -25,7 +25,7 @@ const OurBlogs = () => {
                 <div className='blogs-item'>
                     {
                         blogs.map(blog => <OurBlog 
-                        key={blog.id}
+                        key={blog._id}
                         blog={blog}
                         ></OurBlog>)
                     }

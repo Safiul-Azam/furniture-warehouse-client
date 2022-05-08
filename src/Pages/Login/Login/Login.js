@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -23,20 +24,24 @@ const Login = () => {
         auth
       );
       let errorMessage;
-    if (user) {
-        navigate(from , {replace:true})
-    }
+    // if (user) {
+        
+    // }
     if(error){
         errorMessage = <div className='text-danger'>{error.message}</div>
     }
     if(loading){
         return <Loading></Loading>
     }
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
+        const {data} = await axios.post('http://localhost:5000/login',{email})
+        localStorage.setItem('accessToken', data)
+        navigate(from , {replace:true})
+        console.log(data)
         e.target.reset()
     }
     const resetPassword =async ()=>{

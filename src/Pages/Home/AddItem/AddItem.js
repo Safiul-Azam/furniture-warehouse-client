@@ -21,8 +21,10 @@ const AddItem = () => {
         .then(res => res.json())
         .then(furniture =>{
             console.log(furniture)
+            if(furniture.insertedId){
+                toast('added new item')
+            }
         })
-        toast('added new item')
         reset()
     } 
 

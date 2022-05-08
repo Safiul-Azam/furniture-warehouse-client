@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -8,11 +9,17 @@ const MyItem = () => {
     console.log(myItem)
     const [user] = useAuthState(auth)
     useEffect(() => {
-        const email = user.email
-        const url = `https://fast-brook-43843.herokuapp.com/myItems?email=${email}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setMyItem(data))
+        const getMyItem = async ()=>{
+            const email = user.email
+            const url = `http://localhost:5000/myItems?email=${email}`
+            const {data} = await axios.get(url,{
+                headers:{
+                    authorization:`Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            setMyItem(data)
+        }
+        getMyItem()
     }, [user])
     const handleRemoveItem = id => {
         const proceed = window.confirm('are you sure')
