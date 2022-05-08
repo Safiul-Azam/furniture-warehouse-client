@@ -4,7 +4,7 @@ import './NewArrivals.css'
 const NewArrivals = () => {
     const [arrivals , setArrivals] = useState([])
     useEffect(()=>{
-        fetch('arivals.json')
+        fetch('https://fast-brook-43843.herokuapp.com/arrival')
         .then(res => res.json())
         .then(data => setArrivals(data))
     },[])
