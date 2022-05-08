@@ -20,7 +20,7 @@ const NewArrivals = () => {
            {
                arrivals.map(arrival => <div
                className='container'
-                 key={arrival.id}
+                 key={arrival._id}
                  >
                     <div className=' d-flex align-items-center row'>
                       <div className='arrival-info col-lg-6 col-12'>

@@ -8,23 +8,9 @@ import './Inventory.css'
 const Inventory = () => {
     const { inventoryId } = useParams()
     const [product] = useInventoryDetails(inventoryId)
-    const handleDeleteQuantity = () => {
-        const newQuantity = product.quantity - 1
-        const url = `https://fast-brook-43843.herokuapp.com/furniture/${inventoryId}`
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(newQuantity)
-        })
-            .then(res => res.json())
-            .then(data=>{
-                console.log(data)
-            })
-    }
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
+        console.log(data)
         const url = `https://fast-brook-43843.herokuapp.com/furniture/${inventoryId}`
         fetch(url, {
             method: 'PUT',
@@ -35,12 +21,9 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(quantity => {
-                if (quantity.modifiedCount > 0) {
+                console.log(quantity)
                     toast('Update Your product')
-                    console.log(quantity)
-                } else {
-                    toast('please update product info!')
-                }
+                  
             })
     }
 
@@ -55,7 +38,7 @@ const Inventory = () => {
                 <h5 className='price'>Quantity: {product.quantity}</h5>
                 <h5>Supplier: {product?.supplier}</h5>
                 <p className='description'>{product?.description}</p>
-                <Button onClick={handleDeleteQuantity} className='rounded-0 my-3' variant="dark">Delivered</Button>
+                <Button className='rounded-0 my-3' variant="dark">Delivered</Button>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className='me-2' placeholder='Product Quantity' type="number" {...register("quantity")} />
                     <input type="submit" value='Add' />

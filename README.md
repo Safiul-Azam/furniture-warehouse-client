@@ -1,6 +1,7 @@
 # Furniture-ware-house
 
-This project was ware house management [Furniture-ware-house](https://furniture-ware-house-c81c0.web.app/).
+client side link: ware house management [Furniture-ware-house-client](https://furniture-ware-house-c81c0.web.app/).
+server side link:ware house management [Furniture-ware-house-server]https://fast-brook-43843.herokuapp.com/).
 
 ## About website
 ###### my website is ware house management and i created my website with furniture and i loaded data from database and data deploy in heroku and my site deploy in firebase my try to designing my site eye catchy. 
