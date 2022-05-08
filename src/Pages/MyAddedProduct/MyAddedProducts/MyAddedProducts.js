@@ -1,23 +1,35 @@
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import MyAddedProduct from '../MyAddedProduct/MyAddedProduct';
 
 const MyItem = () => {
     const [myItem, setMyItem] = useState([])
+    const navigate =useNavigate()
     console.log(myItem)
     const [user] = useAuthState(auth)
     useEffect(() => {
         const getMyItem = async ()=>{
             const email = user.email
             const url = `http://localhost:5000/myItems?email=${email}`
-            const {data} = await axios.get(url,{
-                headers:{
-                    authorization:`Bearer ${localStorage.getItem('accessToken')}`
+            try{
+                const {data} = await axios.get(url,{
+                    headers:{
+                        authorization:`Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                })
+                setMyItem(data)
+            }catch(error){
+                toast(error.message)
+                if(error.response.status === 401 || error.response.status === 403){
+                    signOut(auth)
+                    navigate('/login')
                 }
-            })
-            setMyItem(data)
+            }
         }
         getMyItem()
     }, [user])
@@ -43,7 +55,7 @@ const MyItem = () => {
             <div className='d-flex align-items-center w-25 mx-auto'>
                 <div style={{ height: '2px' }} className='line-color w-25'></div>
                 <div>
-                    <h3 className='text-center my-4'>My <span className='title-color'>Item</span></h3>
+                    <h3 className='text-center my-4 mx-3'>My <span className='title-color'>Item</span></h3>
                 </div>
                 <div style={{ height: '2px' }} className='line-color w-25'></div>
             </div>

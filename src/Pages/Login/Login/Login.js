@@ -41,7 +41,6 @@ const Login = () => {
         const {data} = await axios.post('http://localhost:5000/login',{email})
         localStorage.setItem('accessToken', data)
         navigate(from , {replace:true})
-        console.log(data)
         e.target.reset()
     }
     const resetPassword =async ()=>{

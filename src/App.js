@@ -15,6 +15,7 @@ import MyAddedProducts from './Pages/MyAddedProduct/MyAddedProducts/MyAddedProdu
 import { ToastContainer } from 'react-toastify';
 import NoFoundPage from './Pages/NoFoundPage/NoFoundPage';
 import OurBlogs from './Pages/Home/OurBlogs/OurBlogs/OurBlogs';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/allInventory' element={<AllInventory></AllInventory>}></Route>
         <Route path='Our-blogs' element={<OurBlogs></OurBlogs>}></Route>
+        <Route path='blogs'element={<Blogs></Blogs>}></Route>
         <Route path='/inventory/:inventoryId' element={
           <RequireAuth>
             <Inventory></Inventory>
