@@ -11,7 +11,7 @@ const UpdateInventory = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/furniture/${updateId}`
+        const url = `https://fast-brook-43843.herokuapp.com/furniture/${updateId}`
         fetch(url, {
             method: 'PUT',
             headers: {

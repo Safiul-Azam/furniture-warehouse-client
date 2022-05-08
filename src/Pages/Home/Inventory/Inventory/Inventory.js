@@ -6,18 +6,11 @@ import { toast } from 'react-toastify';
 import useInventoryDetails from '../../../../hooks/useInventoryDetails';
 import './Inventory.css'
 const Inventory = () => {
-    const [reload, setIsReload] =useState(true) 
     const { inventoryId } = useParams()
     const [product] = useInventoryDetails(inventoryId)
-    useEffect(()=>{
-        const url =`http://localhost:5000/furniture/${inventoryId}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setIsReload(!reload))
-    },[])
     const handleDeleteQuantity = () => {
         const newQuantity = product.quantity - 1
-        const url = `http://localhost:5000/furniture/${inventoryId}`
+        const url = `https://fast-brook-43843.herokuapp.com/furniture/${inventoryId}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -32,7 +25,7 @@ const Inventory = () => {
     }
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const url = `http://localhost:5000/furniture/${inventoryId}`
+        const url = `https://fast-brook-43843.herokuapp.com/furniture/${inventoryId}`
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -22,8 +22,12 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
         auth
       );
+      let errorMessage;
     if (user) {
         navigate(from , {replace:true})
+    }
+    if(error){
+        errorMessage = <div className='text-danger'>{error.message}</div>
     }
     if(loading){
         return <Loading></Loading>
@@ -56,6 +60,7 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" />
+                        {errorMessage}
                     </Form.Group>
                     <Button className='rounded-0 mb-3' type="submit" variant="dark">Login</Button>
                     <p>New to Furniture-ware-house? <Link className='title-color text-decoration-none' to='/registration'>Create New Account</Link></p>

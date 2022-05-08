@@ -1,56 +1,110 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
+        "name": "Woody Table",
         "price": "300",
         "quantity": "1",
         "supplier":"James William",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "Made from  Beech wood and veneered engineered wood. imported high quality hardware fittings. Most of our furniture is made of natural components.",
         "img": "https://i.ibb.co/q100X8P/furniture1.jpg"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
+        "name": "Norfolk Chair",
         "price": "100",
         "quantity": "1",
         "supplier":"Sebastian",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "Made from Kiln-dried imported Beech veneered engineered wood.imported high quality hardware fittings.Indoor use only",
         "img": "https://i.ibb.co/tP89bd5/furniture2.jpg"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
+        "name": "Prix Chair",
         "price": "150",
         "quantity": "1",
         "supplier":"Christopher",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "Made from Kiln-dried imported Beech wood and veneered engineered wood.Fabric can be dry-cleaned.Indoor use only",
         "img": "https://i.ibb.co/KzwSrSj/furniture3.jpg"
     },
     {
         "id": 4,
-        "name": "BRAKE REPARING",
+        "name": " Table Dove with Glass",
         "price": "180",
         "quantity": "1",
         "supplier":"Gabriel",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/q100X8P/furniture2.jpg"
+        "description": "Made from Kiln-dried imported Beech wood and veneered engineered wood.imported high quality hardware fittings Imported high quality 8 mm thick glass",
+        "img": "https://i.ibb.co/NLWw351/furniture4.jpg"
     },
     {
         "id": 5,
-        "name": "WASH AND GLASSING",
+        "name": " Patriot Chair",
         "price": "100",
         "quantity": "1",
         "supplier":"Jeremiah",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/KzwSrSj/furniture3.jpg"
+        "description": "Made from Kiln-dried imported Beech wood. High quality leather upholstery with soft and durable cushioning. Leather can be selected from available options",
+        "img": "https://i.ibb.co/TPBbqWC/furniture5.jpg"
     },
     {
         "id": 6,
-        "name": "COMPLETE ANALYSIS",
+        "name": "Table Kiwi with Glass",
         "price": "300",
         "quantity": "1",
         "supplier":"Bennett",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
-        "img": "https://i.ibb.co/tP89bd5/furniture1.jpg"
+        "description": "Made from Kiln-dried imported Beech wood and veneered engineered wood.Most of our furniture is made of natural components.",
+        "img": "https://i.ibb.co/qgZKt1Q/furniture6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Table Snipe-",
+        "price": "100",
+        "quantity": "1",
+        "supplier":"Sebastian",
+        "description": "Made from Kiln-dried imported Beech wood and veneered engineered wood.High quality leather upholstery with soft and durable cushioning.",
+        "img": " https://i.ibb.co/vXQC28S/furniture7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Bed-Side Table",
+        "price": "150",
+        "quantity": "1",
+        "supplier":"Christopher",
+        "description": "This wardrobe is sturdy and durable. It can provide good service for many years without any trouble. It looks stylish with a sophisticated-looking space.",
+        "img": "https://i.ibb.co/g32fxPP/furniture8.jpg"
+    },
+    {
+        "id": 9,
+        "name": " Dressing Table Pansy",
+        "price": "180",
+        "quantity": "1",
+        "supplier":"Gabriel",
+        "description": "Made from Kiln-dried imported Beech wood, veneered engineered wood and veneered MDF.This Vanity set has a big mirror. ",
+        "img": "https://i.ibb.co/ChNqFKN/furniture9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Open Shelves Claudio",
+        "price": "100",
+        "quantity": "1",
+        "supplier":"Jeremiah",
+        "description": "One-fourth of a circular piece is the structure of the slides that are arranged in different sizes to form the shelves of this furniture.",
+        "img": "https://i.ibb.co/TLX694z/furniture10.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Showcase Heritage",
+        "price": "300",
+        "quantity": "1",
+        "supplier":"Bennett",
+        "description": "Heritage indeed does behold a sense of heritage. showcase that has glass on all sides except one. There are woodworks on the glass to enhance its beauty.",
+        "img": "https://i.ibb.co/bPMHcPj/furniture11.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Showcase Cinnamon",
+        "price": "300",
+        "quantity": "1",
+        "supplier":"Bennett",
+        "description": "Cinnamon-103 has a classic yet distinctive design. This ebony-colored furniture item is available in a combination of American Teak and White texture.",
+        "img": "https://i.ibb.co/Wc04HHb/furniture12.jpg"
     }
 ]

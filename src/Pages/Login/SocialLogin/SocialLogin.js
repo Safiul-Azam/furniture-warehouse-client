@@ -16,6 +16,11 @@ const SocialLogin = () => {
     if(googleUser || gitUser){
         navigate(from, {replace:true})
     }
+    let errorMessage;
+    if(googleError || gitError){
+        errorMessage = <div className='text-danger text-center'>{gitError.message}</div>
+    }
+
 
     if(googleLoading || gitLoading){
         return <Loading></Loading>
@@ -28,6 +33,7 @@ const SocialLogin = () => {
                 <div className='mx-3'>or</div>
                 <div style={{ height: '1px' }} className='line-color w-50'></div>
             </div>
+                {errorMessage}
             <div>
                 <button onClick={()=>signInWithGoogle()} className='btn social-btn w-50 mx-auto d-block my-3'>
                     <img className='me-2' src={google} alt="" />

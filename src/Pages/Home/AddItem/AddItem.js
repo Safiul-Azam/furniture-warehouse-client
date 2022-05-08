@@ -10,7 +10,7 @@ const AddItem = () => {
     const [user] = useAuthState(auth);
     const onSubmit = data =>{
         console.log(data);
-        const url = `http://localhost:5000/furniture`
+        const url = `https://fast-brook-43843.herokuapp.com/furniture`
         fetch(url,{
             method:'POST',
             headers:{

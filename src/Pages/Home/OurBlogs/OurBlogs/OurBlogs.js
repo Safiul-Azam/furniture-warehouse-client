@@ -14,11 +14,11 @@ const OurBlogs = () => {
             <div className='container '>
                 <div  className='text-center'>
                 <div className='d-flex align-items-center w-25 mx-auto'>
-                <div style={{ height: '2px' }} className='line-color w-25'></div>
+                <div style={{ height: '2px' }} className=' me-2 line-color w-25'></div>
                 <div>
                     <h3 className='text-center my-4'>Our <span className='title-color'>Blogs</span></h3>
                 </div>
-                <div style={{ height: '2px' }} className='line-color w-25'></div>
+                <div style={{ height: '2px' }} className='ms-2 line-color w-25'></div>
             </div>
                     <p className='mb-5'>House-ware-house is considered to be the game-changer in the world furniture industry</p>
                 </div>

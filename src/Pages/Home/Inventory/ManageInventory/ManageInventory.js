@@ -9,7 +9,7 @@ const ManageInventory = () => {
     const handleRemoveItem = id => {
         const proceed = window.confirm('are you sure')
         if (proceed) {
-            const url = `http://localhost:5000/furniture/${id}`
+            const url = `https://fast-brook-43843.herokuapp.com/furniture/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
