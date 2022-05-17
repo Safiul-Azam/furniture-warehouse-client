@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './InventorySingle.css'
 
 const InventorySingle = ({ furniture }) => {
-    const { name, _id, price, description,quantity, supplier, img } = furniture
+    const { name, _id, price, description,quantity, supplier, img, sold } = furniture
     const navigate = useNavigate()
     const navigateToInventory = id => {
         navigate('/inventory/' + id)
@@ -16,7 +16,10 @@ const InventorySingle = ({ furniture }) => {
                 <img src={img} alt="" />
                 <h5>{name}</h5>
                 <h5>${price}</h5>
-                <h5>Quantity: {quantity}</h5>
+                { quantity < 0 ?
+                <h5 className='price'>sold: {sold}</h5>:
+                <h5 className='price'>Quantity: {quantity}</h5>
+            }
                 <h5>Supplier: {supplier}</h5>
                 <p>{description}</p>
                 <Button className='rounded-0' onClick={() => navigateToInventory(_id)} variant="outline-dark">Update</Button>

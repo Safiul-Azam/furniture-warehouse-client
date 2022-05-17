@@ -8,41 +8,54 @@ import './Inventory.css'
 const Inventory = () => {
     const { inventoryId } = useParams()
     const [product, setProduct] = useInventoryDetails(inventoryId)
-    const { quantity } = product
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const addedQuantity = parseFloat(data?.quantity)
-        const currentQuantity = JSON.parse(quantity)
-        const newQuantity = currentQuantity + addedQuantity
-        
+        const productDetail = {
+            name: product.name,
+            img:product.img,
+            price:product.price,
+            supplier:product.supplier,
+            description:product.description,
+            quantity: JSON.parse(product.quantity) + addedQuantity
+        }
         const url = `https://fast-brook-43843.herokuapp.com/furniture/${inventoryId}`
         fetch(url, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify({ quantity: newQuantity })
+            body: JSON.stringify(productDetail)
         })
             .then(res => res.json())
             .then(quantity => {
-                setProduct({quantity:newQuantity})
+                    setProduct(productDetail)
                 // toast('Update Your product')
-
             })
     }
     const handleIncrease = () => {
-        const currentQuantity = JSON.parse(quantity) - 1
+        const productDetail = {
+            name: product.name,
+            img:product.img,
+            price:product.price,
+            supplier:product.supplier,
+            description:product.description,
+            quantity: JSON.parse(product.quantity) - 1,
+            sold:'stock out'
+        }
         const url = `https://fast-brook-43843.herokuapp.com/furniture/${inventoryId}`
         fetch(url, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify({quantity: currentQuantity})
+            body: JSON.stringify(productDetail)
         })
             .then(res => res.json())
             .then(quantity => {
-                setProduct({quantity:currentQuantity})
+                if(productDetail.quantity >= 0){
+                    setProduct(productDetail)
+                }
                 // toast('Update Your product')
 
             })
@@ -58,7 +71,10 @@ const Inventory = () => {
             <div className='single-item col-5'>
                 <h5>{product.name}</h5>
                 <h5 className='price'>${product?.price}</h5>
+            { product.quantity <= 0 ?
+                <h5 className='price'>sold: {product?.sold}</h5>:
                 <h5 className='price'>Quantity: {product?.quantity}</h5>
+            }
                 <h5>Supplier: {product?.supplier}</h5>
                 <p className='description'>{product?.description}</p>
                 <Button onClick={handleIncrease} className='rounded-0 my-3' variant="dark">Delivered</Button>
