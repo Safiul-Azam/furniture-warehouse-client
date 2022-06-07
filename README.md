@@ -4,11 +4,10 @@ client side link: ware house management [Furniture-ware-house-client](https://fu
 server side link:ware house management [Furniture-ware-house-server]https://fast-brook-43843.herokuapp.com/).
 
 ## About website
-###### my website is ware house management and i created my website with furniture and i loaded data from database and data deploy in heroku and my site deploy in firebase my try to designing my site eye catchy. 
+###### my website is ware house management and i created my website with furniture and i passed data with curd and data deploy in heroku and my site deploy in firebase. 
 ## features and functionality
 * Implemented authentication by firebase and authorization by JSON web token.
-* User handles updating system for any product, update a product quantity, like increase or
-Decrease
+* User handles updating system for any product, update a product quantity, like increase or Decrease
 * User has been allowed to add a new product. and see his added product
 
 * if you see item  inventory you must be login or sign up;
