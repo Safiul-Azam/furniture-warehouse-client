@@ -14,7 +14,7 @@ const InventorySingle = ({ furniture }) => {
         <div className='single-item text-center'>
             <div>
                 <img src={img} alt="" />
-                <h5>{name}</h5>
+                <h5 className='mt-3'>{name}</h5>
                 <h5>${price}</h5>
                 { quantity < 0 ?
                 <h5 className='price'>sold: {sold}</h5>:

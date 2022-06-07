@@ -9,30 +9,33 @@ import MyAddedProduct from '../MyAddedProduct/MyAddedProduct';
 
 const MyItem = () => {
     const [myItem, setMyItem] = useState([])
-    const navigate =useNavigate()
+    const navigate = useNavigate()
     console.log(myItem)
     const [user] = useAuthState(auth)
     useEffect(() => {
-        const getMyItem = async ()=>{
-            const email = user.email
+        const getMyItem = async () => {
+            const email = user?.email
             const url = `https://fast-brook-43843.herokuapp.com/myItems?email=${email}`
-            try{
-                const {data} = await axios.get(url,{
-                    headers:{
-                        authorization:`Bearer ${localStorage.getItem('accessToken')}`
+            console.log(url)
+            try {
+                
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
                     }
                 })
                 setMyItem(data)
-            }catch(error){
+                console.log(data)
+            } catch (error) {
                 toast(error.message)
-                if(error.response.status === 401 || error.response.status === 403){
+                if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth)
                     navigate('/login')
                 }
             }
         }
         getMyItem()
-    }, [user])
+    }, [navigate, user.email])
     const handleRemoveItem = id => {
         const proceed = window.confirm('are you sure')
         if (proceed) {
@@ -59,13 +62,13 @@ const MyItem = () => {
                 </div>
                 <div style={{ height: '2px' }} className='line-color w-25'></div>
             </div>
-          {
-              myItem.map(furniture => <MyAddedProduct
-                 key={furniture._id}
-                 furniture={furniture}
-                 handleRemoveItem={handleRemoveItem}
-                 ></MyAddedProduct>)
-          }
+            {
+                myItem.map(furniture => <MyAddedProduct
+                    key={furniture._id}
+                    furniture={furniture}
+                    handleRemoveItem={handleRemoveItem}
+                ></MyAddedProduct>)
+            }
         </div>
     );
 };

@@ -71,7 +71,7 @@ const Inventory = () => {
             <div className='single-item col-5'>
                 <h5>{product.name}</h5>
                 <h5 className='price'>${product?.price}</h5>
-            { product.quantity <= 0 ?
+            { product.quantity < 0 ?
                 <h5 className='price'>sold: {product?.sold}</h5>:
                 <h5 className='price'>Quantity: {product?.quantity}</h5>
             }
