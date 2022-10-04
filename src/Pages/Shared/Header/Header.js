@@ -12,7 +12,7 @@ const Header = () => {
         signOut(auth)
     }
     return (
-        <div className='nav-bar mt-2 sticky-top'>
+        <div className='navbar sticky-top'>
             <div className='container'>
                 <h2 className='logo'>FURNITURE <span className='title-color'>WARE HOUSE</span></h2>
                 <div>
