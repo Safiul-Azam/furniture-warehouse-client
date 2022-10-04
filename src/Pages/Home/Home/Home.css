@@ -1,11 +1,3 @@
-.banner{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.679),rgba(0, 0, 0, 0.647)), url(../../../images//banner//banner1.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 270px 0;
-    margin: 50px 0;
-}
 .banner-title{
     color: #ffffff;
     font-size: 30px;
