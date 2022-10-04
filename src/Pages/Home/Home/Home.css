@@ -1,26 +1,26 @@
-.banner-title{
+.banner-title {
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 50px;
+}
+.update-btn a {
+  border: 1px solid #9cc25d;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: transparent;
+  color: #9cc25d;
+  transition: 0.5s;
+  text-decoration: none;
+}
+.update-btn a:hover {
+  background-color: #9cc25d;
+  color: white;
+}
+@media only screen and (max-width: 576px) {
+  .banner-title {
     color: #ffffff;
-    font-size: 30px;
-    line-height: 50px;
-}
-.update-btn{
-    border:1px solid #9CC25D;
-    padding: 7px 30px;
-    font-size: 20px;
-    font-weight: 500;
-    background-color: transparent;
-    color:#9CC25D;
-    transition: .5s;
-}
-.update-btn:hover{
-    background-color: #9CC25D;
-    color: white;
-
-}
-@media only screen and (max-width:576px) {
-    .banner-title{
-        color: #ffffff;
-        font-size: 18px;
-        line-height: 30px;
-    }
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
